@@ -1,0 +1,46 @@
+<!--pages/qrcp/qrcp.wxml-->
+<view class="container">
+  <view class="content order-content" wx:if="{{unPayOrder}}">
+    <view class="title">
+      <text>已下单菜品</text>
+      <view class="table">桌台:<text class="table-num">{{foodTableName}}</text></view>
+    </view>
+    <view class="line"></view>
+    <view class="selected-list">
+      <view class="order-content-select" wx:for="{{unPayOrder.offlineGoods}}" wx:key="index">
+        <view class="order-goods-text">
+          <image class="goods-pic" src="{{item.goodsImgUrl}}"></image>
+          <view class="goods-text">{{item.goodsName}}</view>
+        </view>
+        <view class="order-goods-price">
+          <view class="goods-num">x{{item.buyNum}}</view>
+          <view class="goods-price"><text class="mini">￥</text>{{item.totalPrice}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 备注 -->
+    <view wx:if="{{unPayOrder.remark}}" class="words">
+      <text>备注：{{unPayOrder.remark}}</text>
+    </view>
+    <view class="discount">
+      <!-- <view>优惠折扣：-￥55</view> -->
+      <view>小计：￥ <Text class="discount-price">{{moneyInt}}</Text>{{moneyFloat}} </view>
+    </view>
+  </view>
+  <!-- 继续加菜 -->
+  <view class="add-food" bindtap="handleAddFood">继续加菜</view>
+  <view wx:if="{{isLogin}}" class="footer" bindtap="handleUnorderPay">
+    <view class="sum-price">
+      <text class="price-val-decimal">￥</text>
+      <text class="price-val">{{money}}</text>
+    </view>
+    <view class="to-order">结算</view>
+  </view>
+  <button wx:else="{{isLogin}}" class="footer" open-type="getPhoneNumber" bindgetphonenumber="handleSubmit">
+    <view class="sum-price">
+      <text class="price-val-decimal">￥</text>
+      <text class="price-val">{{money}}</text>
+    </view>
+    <view class="to-order">结算</view>
+  </button>
+</view>

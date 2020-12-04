@@ -1,0 +1,271 @@
+/* pages/pay/pay.wxss */
+page{
+  font-family:PingFang SC;
+}
+.container{
+  width: 750rpx;
+  height: 1206rpx;
+  background-color: #fff;
+
+}
+.header{
+  height: 310rpx;
+  background-color: #E51C23;
+}
+.header1{
+  height: 128rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.header cover-image{
+  float: left;
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 26rpx; 
+}
+.header .name{
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 128rpx;
+}
+
+.content{
+  height: 993rpx;
+  background-color: #f6f6f6;
+  margin-top: 31rpx;
+  padding-top: 117rpx;
+}
+.pay-ways{
+  width: 658rpx;
+  height: 212rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  padding: 40rpx 20rpx;
+  margin-left:26rpx;
+}
+.pay-way{
+  height: 60rpx;
+  margin-bottom: 40rpx;
+  line-height: 60rpx;
+}
+.payway-pic,.payway{
+  float: left;
+}
+.circle{
+  float:right;
+  margin-right: 20rpx;
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: -5rpx;
+  background: url(https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/circle.png);
+}
+
+.payway-pic{
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 10rpx;
+  margin-top: 12rpx;
+}
+.payway{
+  font-size: 28rpx;
+}
+
+/* 商家及支付金额 */
+.pay-info{
+  width: 698rpx;
+  height: 250rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 26rpx;
+  top: 168rpx;
+  text-align: center;
+}
+
+.sum-money{
+  font-size: 28rpx;
+  margin-top: 35rpx;
+  margin-bottom: 10rpx;
+}
+.sum-money-val-decimal{
+  color: #E51C23;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.sum-money-val-normal{
+  color: #E51C23;
+  font-size: 58rpx;
+  font-weight: bold;
+}
+.shopname{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-top:8rpx;
+}
+
+/* 底部固定导航 */
+.footer{
+  width: 750rpx;
+  height: 98rpx;
+  background-color: #E51C23;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sum-mon-val,.topay{
+  float: left;
+}
+.sum-mon-val-decimal{
+  font-size: 34rpx;
+  color: #fff;
+}
+.sum-mon-val-normal{
+  font-size: 50rpx;
+  color: #fff;
+}
+.topay{
+  font-weight: bold;
+  font-size: 34rpx;
+  color: #fff;
+  margin-left: 33rpx;
+}
+
+/* 支付弹出框 */
+.pay-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5)
+}
+.pay-alert{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 750rpx;
+  height: 698rpx;
+  background-color: #fff;
+  z-index: 100;
+}
+.alert-header{
+  border-bottom: 1rpx solid #e7e7e7;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.credit-option{
+  border-bottom: 1rpx solid #e7e7e7;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.alert-header{
+  height: 100rpx;
+}
+
+.headerLeft{
+  width: 30rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.headerRight{
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-header image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+
+.credit-option{
+  height: 90rpx;
+  position: relative;
+}
+.credit-pic{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 46rpx;
+}
+.yes{
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  right: 36rpx;
+  top: center;
+  background: url(https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/yes.png);
+}
+.credit-name{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+/* 确认付款 */
+
+.amount{
+  height: 194rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.amount-rmb{
+  position: relative;
+  top: 10rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.amount-val{
+  font-size: 60rpx;
+  font-weight: bold;
+}
+.user-info{
+  width: 698rpx;
+  margin: 40rpx auto;
+  /* margin-left: 26rpx; */
+}
+.user-name,.user-payway{
+  border-bottom: 1rpx solid #e7e7e7;
+  height: 90rpx;
+}
+.user-name{
+  border-top: 1rpx solid #e7e7e7;
+}
+.user-payway image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.user-name text,.user-payway>text{
+  float: left;
+  font-size: 30rpx;
+  color: #999;
+  line-height: 90rpx;
+}
+.pick-credit{
+  font-size: 30rpx;
+  color: #999;
+}
+.user-payway>view{
+  margin-top: 24rpx;
+}
+.textCenter{
+  text-align: center;
+  margin: 0 auto;
+}

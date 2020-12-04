@@ -1,0 +1,63 @@
+<!-- pages/add-credit2/add-credit2.wxml -->
+<view class="container">
+  <!-- <view class="header">
+    <image src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/return.png" bindtap="goBack"></image>
+    <text>添加银行卡</text>
+  </view> -->
+  <view class="content">
+    <view class="tips">请选择银行卡类型</view>
+    <view class="wrap" style="border-radius:12rpx">
+      <view>
+        <view class="big">卡类型</view>
+        <view class="small red">
+          {{cardBank}} {{ cardType === 'CREDIT_CARD' ? '信用卡' : '储蓄卡'  }}
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{cardType === 'CREDIT_CARD'}}" class="wrap">
+      <view>
+        <view class="big">有效期</view>
+        <picker mode="date" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          <view class="small">{{expiredate}}</view>
+        </picker>
+      </view>
+    </view>
+    <view wx:if="{{cardType === 'CREDIT_CARD'}}" class="wrap">
+      <view>
+        <view class="big">安全码</view>
+        <input class="small" placeholder="请输入信用卡安全码" style="width:235rpx" bindinput="cvv2Change"></input>
+      </view>
+    </view>
+    <view style="border-radius:12rpx">
+      <view class="tips">请选择银行卡类型</view>
+      <view class="wrap">
+        <view>
+          <view class="big">姓名</view>
+          <input class="small" placeholder="请输入持卡人姓名" style="width:204rpx; text-align: right" bindinput="nameChange"></input>
+        </view>
+      </view>
+      <view class="wrap">
+        <view>
+          <view class="big">证件类型</view>
+          <picker class="small red" bindchange="changeCreditType" mode="selector" value="0" range="{{creditTypes}}">
+            {{creditTypes[creditTypesIndex]}}
+          </picker>
+        </view>
+      </view>
+      <view class="wrap">
+        <view>
+          <view class="big">证件号</view>
+          <input class="small" placeholder="请输入证件号" style="width:300rpx; text-align: right" bindinput="idnumChange"></input>
+        </view>
+      </view>
+    </view>
+    <view class="tips">请选择银行卡类型</view>
+    <view class="wrap" style="border-radius:12rpx">
+      <view>
+        <view class="big">手机号</view>
+        <input class="small" placeholder="请输入银行预留手机号" style="width:258rpx; text-align: right" value="" bindinput="getPhoneNumber"></input>
+      </view>
+    </view>
+    <view class="next" bindtap="next">下一步</view>
+  </view>
+</view>

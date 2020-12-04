@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/balance/qrcp",
+    "pages/login/login",
+    "pages/set-pwd/set-pwd",
+    "pages/words/words",
+    "pages/protocol/protocol",
+    "pages/validate/validate",
+    "pages/payed/payed",
+    "pages/pay-checkd/pay-checkd",
+    "pages/add-credit/add-credit",
+    "pages/add-credit2/add-credit2",
+    "pages/logs/logs",
+    "pages/qrcp/qrcp",
+    "pages/success/success",
+    "pages/pay/pay"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#E51C23",
+    "navigationBarTitleText": "指联物联",
+    "navigationBarTextStyle":"white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,156 @@
+/* pages/validate/validate.wxss */
+page {
+  font-family: PingFang SC;
+  background-color: #f6f6f6;
+}
+
+.container {
+  width: 750rpx;
+}
+
+.header {
+  height: 128rpx;
+  background-color: #E51C23;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.header image {
+  float: left;
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 26rpx;
+}
+
+.header text {
+  font-size: 36rpx;
+  margin-left: 241rpx;
+  color: #fff;
+}
+
+.content {
+  padding-left: 26rpx;
+  padding-right: 26rpx;
+}
+
+.txt {
+  height: 308rpx;
+  padding: 67rpx 44rpx 0;
+
+  background-color: #fff;
+  margin-top: 30rpx;
+  border-radius: 12rpx;
+}
+
+.txt>view {
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+  margin-bottom: 26rpx;
+
+}
+
+/* 验证码 */
+.validate {
+  /* display: flex;
+  justify-content: space-between; */
+  position: relative;
+  width: 305rpx;
+  height: 70rpx;
+}
+
+.validate-ipt {
+  width: 305rpx;
+  height: 70rpx;
+  word-spacing: 140rpx;
+  letter-spacing: 140rpx;
+  text-indent: 35rpx;
+  line-height: 70rpx;
+}
+
+.validate input {
+  width: 305rpx;
+  outline: none;
+  opacity: 0;
+  height: 70rpx;
+  position: absolute;
+  top: 0;
+  left: -1000rpx;
+  text-align: left;
+}
+
+.validate .line {
+  width: 70rpx;
+  height: 2rpx;
+  background-color: #e7e7e7;
+  position: absolute;
+  bottom: 0;
+}
+
+.validate .line1 {
+  left: 3rpx;
+}
+
+.validate .line2 {
+  left: 170rpx;
+}
+
+.validate .line3 {
+  left: 320rpx;
+}
+
+.validate .line4 {
+  left: 480rpx;
+}
+
+.resend {
+  width: 200rpx;
+  float: right;
+  margin-top: -46rpx;
+}
+
+.resend text {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.resend .red {
+  color: #E51C23
+}
+
+/* 下一步 */
+.next {
+  width: 698rpx;
+  height: 96rpx;
+  background: #E51C23;
+  border-radius: 48rpx;
+  text-align: center;
+  line-height: 96rpx;
+  color: #fff;
+  margin-top: 171rpx
+}
+
+.iptContent{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.iptbox{
+  width: 80rpx;
+  height: 80rpx;
+  border:1rpx solid #E7E7E7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.ipt{
+  width: 0;
+  height: 0;
+}
+.btn-area{
+  width: 80%;
+  background-color: orange;
+  color:white;
+}

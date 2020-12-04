@@ -1,0 +1,27 @@
+<!-- pages/set-pwd/set-pwd.wxml -->
+<view class="container">
+  <view class="content">
+    <view class="pwd">
+      <view class="pwd-ipt" catchtap='getFocus'>
+        <!--<text class="pwd-text" wx:if="{{onepwd.length > 0}}">{{onepwd}}</text>-->
+        <!--<text class="pwd-text" wx:if="{{twopwd.length > 0}}">{{twopwd}}</text>-->
+        <view class="line line1" ><text wx:if="{{onepwd.length > 0 || twopwd.length > 0}}">●</text></view>
+        <view class="line line2" ><text wx:if="{{onepwd.length > 1 || twopwd.length > 1}}">●</text></view>
+        <view class="line line3" ><text wx:if="{{onepwd.length > 2 || twopwd.length > 2}}">●</text></view>
+        <view class="line line4" ><text wx:if="{{onepwd.length > 3 || twopwd.length > 3}}">●</text></view>
+        <view class="line line5" ><text wx:if="{{onepwd.length > 4 || twopwd.length > 4}}">●</text></view>
+        <view class="line line6" ><text wx:if="{{onepwd.length > 5 || twopwd.length > 5}}">●</text></view>
+      </view>
+      <input type="password" bindinput="changeValue" value='{{inputValue}}' focus='{{payFocus}}' maxlength="6"></input>
+    </view>
+    <view class="tips">{{tips}}</view>
+  </view>
+  <!-- 设置成功遮罩层 -->
+  <view class="mask" wx:if="{{setStatus}}">
+    <view class="mask-toast">
+      <image src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/pwd-setted.png"></image>
+      <view class="pwd-setted-txt">密码设置成功</view>
+      <view class="pwd-setted-btn" bindtap="pwdSetted">完成</view>
+    </view>
+  </view>
+</view>

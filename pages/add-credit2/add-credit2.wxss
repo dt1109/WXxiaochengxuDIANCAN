@@ -1,0 +1,74 @@
+/* pages/add-credit2/add-credit2.wxss */
+page{
+  font-family:PingFang SC;
+  background-color: #f6f6f6;
+}
+.container{
+  width: 750rpx;
+}
+.header{
+  height: 128rpx;
+  background-color: #E51C23;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.header image{
+  float: left;
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 26rpx; 
+}
+.header text{
+  font-size: 36rpx;
+  margin-left: 241rpx;
+  color: #fff;
+}
+
+.content{
+ padding-left: 26rpx;
+ padding-right: 26rpx;
+}
+
+.wrap{
+  width: 698rpx;
+}
+.tips{
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 21rpx;
+  margin-top: 30rpx;
+  margin-bottom: 11rpx;
+}
+.wrap view{
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  background-color: #fff;
+}
+.big{
+  font-size: 28rpx;
+  color: #333;
+}
+.small{
+  font-size: 26rpx;
+  color: #999;
+}
+.red{
+  color: #E51C23
+}
+/* 下一步 */
+.next{
+  width:698rpx;
+  height:96rpx;
+  background:#E51C23;
+  border-radius:48rpx;
+  text-align: center;
+  line-height: 96rpx;
+  color: #fff;
+  margin-top: 171rpx
+}

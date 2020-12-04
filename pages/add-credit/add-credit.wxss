@@ -1,0 +1,99 @@
+/* pages/add-credit/add-credit.wxss */
+page{
+  font-family:PingFang SC;
+  background-color: #f6f6f6;
+}
+.container{
+  width: 750rpx;
+}
+.header{
+  height: 128rpx;
+  background-color: #E51C23;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.header image{
+  float: left;
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 26rpx; 
+}
+.header text{
+  font-size: 36rpx;
+  margin-left: 241rpx;
+  color: #fff;
+}
+.content{
+ padding-left: 26rpx;
+ padding-right: 26rpx;
+}
+.content .tips{
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 30rpx;
+  margin-left: 21rpx;
+  margin-bottom: 11rpx;
+}
+.content .input{
+  width: 698rpx;
+  height: 96rpx;
+  position: relative;
+}
+.content .input text{
+  position: absolute;
+  top: 35rpx;
+  left: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+  z-index: 5
+}
+.content input{
+  width: 698rpx;
+  height: 96rpx;
+  outline: none;
+  background-color: #fff;
+  box-shadow:0rpx 1rpx 1rpx 0rpx rgba(248,248,248,1);
+  border-radius:12rpx;
+  text-align: left;
+  padding-left: 90rpx;
+  padding-top: 10rpx;
+  box-sizing: border-box;
+}
+
+.placeholder{
+  color: #999;
+  font-size: 26rpx; 
+}
+.read{
+  margin-top: 349rpx;
+  margin-left: 193rpx;
+  height: 28rpx;
+  }
+.read image, .read text,.read navigator{
+  float: left;
+}
+.read image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 12rpx;
+}
+.read text{
+  font-size: 24rpx;
+  color: #333;
+}
+.read navigator{
+  color: #E51C23;
+  font-size: 24rpx;
+}
+.next{
+  width:698rpx;
+  height:96rpx;
+  background:#E51C23;
+  border-radius:48rpx;
+  margin-top: 33rpx;
+  text-align: center;
+  line-height: 96rpx;
+  color: #fff;
+}

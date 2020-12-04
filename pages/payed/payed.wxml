@@ -1,0 +1,55 @@
+<!--pages/qrcp/qrcp.wxml-->
+<view class="container">
+   <!-- <view class="header">
+   <cover-image src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/diandan/return.png" bindtap="goBack"></cover-image>
+     <text class="name">外公的饺子外婆的面</text>
+   </view> -->
+
+   <view class="content">
+     <view class="title">
+       <text>已选菜品</text>
+       <view class="table">桌台:<text class="table-num">1-25</text></view>
+     </view>
+     <view class="line"></view>
+     <view class="selected-list">
+       <view class="selected-item" wx:for="{{foodList}}" wx:key="index" wx:if="{{item.num!=0}}">
+            <view class="food-info">
+              <image src="../../image/diandan/food1.png"></image>
+              <view class="food-name">{{item.name}}</view>
+            </view>
+            <view class="food-item-num"><text>×{{item.num}}</text></view>
+            <view class="food-price">
+                <text class="mini">￥</text>
+                <text>35.00</text>
+                <text class="mini">00</text>
+            </view>
+       </view>
+     </view>
+     <!-- 优惠折扣  金额小计 -->
+     <view class="subtotal">
+       <view class="sum">
+         <text>小计：</text>
+          <text class="mini">￥</text>
+          <text class="big">35</text>
+          <text class="mini">.00</text>
+       </view>
+       <view class="sale">
+        <text>优惠折扣：</text>
+        <text class="red">-￥55</text>
+       </view>
+     </view>
+     <view class="add-food" >继续加菜</view>
+
+   </view>
+
+   <!-- 底部固定菜单 -->
+
+   <view class="footer">
+     <view class="sum-price">
+       <text class="price-val-decimal">￥</text>
+       <text class="price-val">455.</text>
+       <text class="price-val-decimal">22</text>
+     </view>
+     <view class="to-order" bindtap="toPay">结算</view>
+   </view>
+</view>

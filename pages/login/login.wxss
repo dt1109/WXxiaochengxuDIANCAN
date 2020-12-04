@@ -1,0 +1,145 @@
+/* pages/login/login.wxss */
+page{
+  font-family:PingFang SC;
+  background-color: #f6f6f6;
+}
+.container{
+  width: 750rpx;
+}
+.header{
+  height: 128rpx;
+  background-color: #E51C23;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.rebuildMsg{
+  text-align: center;
+  margin-top: 50rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.msgDesc{
+  margin-right: 48rpx;
+}
+.header image{
+  float: left;
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 26rpx; 
+}
+.phone{
+  color: #333;
+  font-size: 34rpx;
+  font-weight: bold;
+  width: 300rpx;
+  margin: 0 auto;
+  text-align: left;
+}
+.msgDescBox{
+  width: 320rpx;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 10rpx;
+}
+.header text{
+  font-size: 36rpx;
+  color: #fff;
+}
+
+.content{
+  width: 698rpx;
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+}
+.title{
+  font-size: 50rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 90rpx;
+}
+.validate{
+  display: flex;
+  justify-content: space-between;
+  width: 630rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  margin-top: 77rpx;
+  margin-left: 34rpx;
+  border-bottom: 1rpx solid #E7E7E7;
+  padding-bottom: 10rpx;
+}
+.validate input{
+  color: #333;
+  font-size: 26rpx;
+  outline: none;
+  border: none;
+}
+.validate .sendMsg{
+  height:50rpx;
+  width: 150rpx;
+  border:1rpx solid rgba(153,153,153,1);
+  opacity:1;
+  border-radius:5rpx;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 50rpx;
+  padding:0;
+  margin: 0;
+}
+.login{
+  width: 698rpx;
+  height: 98rpx;
+  background-color: #E51C23;
+  color: #fff;
+  font-weight: bold;
+  font-size: 34rpx;
+  margin-top: 279rpx;
+  line-height: 98rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.disable{
+  background-color: #FF989B;
+}
+.protocol{
+  width: 532rpx;
+  margin: 40rpx auto;
+  font-size: 28rpx;
+  color: #666;
+}
+.protocol text,
+navigator{
+  float: left;
+}
+.red{
+  color: #E51C23;
+}
+
+.iptContent{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.iptbox{
+  width: 120rpx;
+  height: 80rpx;
+  border-bottom:1rpx solid #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 80rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.ipt{
+  width: 0;
+  height: 0;
+}
+.btn-area{
+  width: 80%;
+  background-color: orange;
+  color:white;
+}

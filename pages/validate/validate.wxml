@@ -1,0 +1,23 @@
+<!-- pages/validate/validate.wxml -->
+<view class="container">
+  <view class="content">
+    <view class="txt">
+      <view>验证码已发送到您的手机</view>
+      <view>请输入验证码</view>
+      <view class='iptContent'>
+        <block wx:for="{{Length}}" wx:key="item">
+          <input class='iptbox' value="{{authcode.length>=index+1?authcode[index]:''}}" disabled password='{{ispassword}}' catchtap='Tap'></input>
+        </block>
+      </view>
+      <input name="password" password="{{true}}" class='ipt' maxlength="{{Length}}" focus="{{isFocus}}" bindinput="Focus"></input>
+      <view class="resend" wx:if="{{flag}}">
+        <text bindtap="againSendMsg">重新获取验证码</text>
+      </view>
+      <view wx:else class="resend" bindtap="countDown">
+        <text class="red">{{second}}s</text>
+        <text>后可重新获取</text>
+      </view>
+    </view>
+    <view class="next" bindtap="next">下一步</view>
+  </view>
+</view>

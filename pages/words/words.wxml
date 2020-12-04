@@ -1,0 +1,9 @@
+<!--pages/words/words.wxml-->
+<!-- 添加备注 -->
+<view class="container">
+  <view class="content">
+    <textarea value="{{remark}}" bindinput="handleSetRemark" placeholder="请输入口味、偏好、忌口等要求......" maxlength="50" placeholder-class="words">
+    <view class="shadow"><text class="shadow-num">{{remarkLength}}</text>/50</view></textarea>
+    <view bindtap="handleSubmit" class="submit">完成</view>
+  </view>
+</view>

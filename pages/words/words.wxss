@@ -1,0 +1,70 @@
+/* pages/words/words.wxss */
+page{
+  font-family:PingFang SC;
+  background-color: #fff;
+}
+.container{
+  width: 750rpx;
+}
+.header{
+  height: 128rpx;
+  background-color: #E51C23;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.header cover-image{
+  float: left;
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 26rpx; 
+}
+.header .name{
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 128rpx;
+}
+.content{
+  width: 750rpx;
+  height: 1206rpx;
+  background-color: #fff
+}
+textarea{
+  width: 638rpx;
+  height: 334rpx;
+  padding: 30rpx 26rpx;
+  margin: 30rpx auto;
+  border: 1rpx solid auto;
+  border-radius: 10rpx;
+  z-index: 10;
+  background-color: #f6f6f6;
+}
+
+.words{
+  color: #999;
+  font-size:28rpx;
+}
+textarea {
+  position: relative
+}
+.shadow {
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+  font-size: 30rpx;
+  color: #333
+}
+.shadow-num {
+  color: #999
+}
+/* 完成按钮 */
+.submit{
+  width: 698rpx;
+  height: 98rpx;
+  margin: 60rpx auto;
+  background-color: #E51C23;
+  color: #fff;
+  text-align: center;
+  line-height: 98rpx;
+}

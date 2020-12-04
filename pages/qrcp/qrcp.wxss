@@ -1,0 +1,260 @@
+/* pages/qrcp/qrcp.wxss */
+page{
+  font-family:PingFang SC;
+}
+.container{
+  padding-bottom: 150rpx;
+  width: 750rpx;
+  min-height: 100vh;
+  background-color: #f6f6f6;
+  overflow: hidden;
+}
+.content{
+  margin-top: 30rpx;
+  position:relative;
+  width: 618rpx;
+  padding: 30rpx 30rpx 40rpx;
+  margin: 30rpx auto;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+
+.content .title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #666;
+}
+.title .table{
+  /* margin-left: 355rpx; */
+}
+.title .table-num{
+  margin-left: 10rpx;
+  font-weight: bold;
+  font-family:PingFang SC Bold;
+  color: #333;
+}
+
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: #e7e7e7;
+  margin-top: 30rpx;
+}
+.selected-list {
+  width: 100%;
+  min-height: 100rpx;
+}
+.order-content-select {
+  width: 100%;
+  height: 96rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-content {
+  padding-bottom: 0
+}
+.order-content .table {
+  margin-left: 0;
+  font-size: 24rpx
+}
+.order-content .table-num {
+  margin-left: 10rpx;
+  font-size: 28rpx
+}
+.order-content .title {
+  display: flex;
+  justify-content: space-between
+}
+.order-content .line {
+  margin-bottom: 15rpx
+}
+.order-content .words {
+  margin-top: 15rpx!important;
+  border-bottom: none
+}
+.order-goods-text {
+  display: flex;
+  justify-self: flex-start;
+  width: 400rpx;
+}
+.order-goods-price {
+  display: flex;
+  justify-content: space-between;
+  width: 252rpx;
+}
+.order-goods-price .goods-num {
+  font-size: 24rpx;
+  color: #333;
+}
+.order-goods-price .goods-price {
+  font-size: 30rpx;
+  color: #333;
+}
+.order-content-select .goods-pic {
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 10rpx;
+}
+.order-content-select .mini {
+  font-size: 24rpx;
+}
+.order-content-select .goods-text {
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
+  font-weight: bold;
+  font-size: 30rpx;
+  color: #333;
+}
+.selected-item{
+  height: 100rpx;
+  margin-top: 30rpx;
+}
+.selected-item .goods-pic,.food-info{
+  float: left;
+}
+.selected-item .goods-pic{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.food-info{
+  margin-left: 20rpx;
+}
+.food-info .food-name{
+  font-size: 30rpx;
+  font-weight: bold;
+  color:#333;
+}
+
+.food-info .food-price{
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 16rpx;
+}
+.food-price .mini{
+  font-size: 24rpx;
+}
+
+.reduce,.add,.val{
+  float: right;
+  margin-top: 32rpx;
+}
+.reduce,.add{
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.val{
+  width: 29rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  margin-left: 11rpx;
+  margin-right: 17rpx;
+  font-size: 24rpx;
+  font-weight: bold;  
+}
+/* 备注 */
+.words{
+  display: flex;
+  justify-content: space-between;
+  width: 618rpx;
+  height: 100rpx;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  position: relative;
+  color: #999;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}
+.words text{
+  margin-top: 30rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.words image{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 79rpx;
+  margin-top: 40rpx;
+}
+
+/* 继续加菜 */
+.add-food{
+  font-size: 28rpx;
+  color: #E51C23;
+  width: 180rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #E51C23;
+  margin: 40rpx auto 0;
+  text-align: center;
+  line-height: 60rpx;
+  
+   
+}
+/* 
+底部固定菜单
+ */
+.footer{
+  width: 100%;
+  height: 98rpx;
+  background-color: #E51C23;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.sum-price,.to-order,.sum-price-val,.sum-price-val-decimal{
+  float: left;
+}
+.sum-price .price-val{
+  font-size: 50rpx;
+  color: #fff;
+  font-family: PingFang SC Medium;
+}
+.sum-price .price-val-decimal{
+  font-size: 34rpx;
+  color: #fff;
+  font-family: PingFang SC Medium;
+}
+.to-order{
+  margin-left: 33rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.unorder-footer {
+  width: 100%;
+  height: 98rpx;
+  display: flex;
+  justify-self: start;
+  align-content: center
+}
+.unorder-no-add {
+  width: 240rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #E51C23;
+  background: #fff
+}
+.unorder-add {
+  display: flex;
+  justify-content: space-evenly;
+  width: 510rpx;
+  height: 98rpx;
+  font-size: 34rpx;
+  color: #fff;
+  line-height: 98rpx;
+  text-align: center;
+}

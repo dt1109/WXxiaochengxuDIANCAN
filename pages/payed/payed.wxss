@@ -1,0 +1,175 @@
+/* pages/qrcp/qrcp.wxss */
+page{
+  font-family:PingFang SC;
+}
+.container{
+  width: 750rpx;
+  height: 1206rpx;
+  background-color: #f6f6f6;
+
+}
+.header{
+  height: 128rpx;
+  background-color: #E51C23;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.header cover-image{
+  float: left;
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 26rpx; 
+}
+.header .name{
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 128rpx;
+}
+
+.content{
+  position:relative;
+  width: 618rpx;
+  height: 823rpx;
+  padding: 30rpx 30rpx 40rpx;
+  margin: 30rpx auto;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+
+.content .title{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666;
+}
+.title .table{
+  margin-left: 355rpx;
+}
+.title .table-num{
+  font-weight: bold;
+  font-family:PingFang SC Bold;
+  color: #333;
+}
+
+.line{
+  width: 618rpx;
+  height: 1rpx;
+  background-color: #e7e7e7;
+  margin-top: 30rpx;
+}
+.selected-item{
+  height: 100rpx;
+  margin-top: 30rpx;
+  justify-content: space-between;
+  
+}
+.selected-item,.food-info{
+  display: flex;
+  align-items: center;
+}
+.selected-item image,.food-name,.food-info,.food-item-num{
+  float: left;
+}
+
+.food-price{
+  float: right;
+  font-size: 30rpx;
+  color: #333;
+}
+.selected-item image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.food-info .food-name{
+  font-size: 30rpx;
+  font-weight: bold;
+  color:#333;
+  margin-left: 20rpx;
+  margin-right: 155rpx;
+  width: 150rpx;
+}
+.food-price .mini{
+  font-size: 24rpx;
+}
+
+.food-item-num{
+  width: 30rpx;
+  color: #333;
+  font-size: 24rpx;
+}
+/* 优惠折扣  金额小计 */
+.subtotal{
+  height: 48rpx;
+  margin-top:58rpx;
+}
+.subtotal .sale,.subtotal .sum{
+  float: right;
+}
+.subtotal text{
+  font-size: 24rpx;
+  color: rgba(51,51,51,1);
+}
+.sale .red{
+  color:rgba(229,28,35,1)
+}
+.sum{
+  margin-left: 40rpx;
+}
+.sum .mini{
+  font-weight: bold;
+}
+.sum .big{
+  font-weight: bold;
+  font-size: 34rpx;
+}
+/* 继续加菜 */
+.add-food{
+  font-size: 28rpx;
+  color: #E51C23;
+  width: 180rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #E51C23;
+  margin-left: 249rpx;
+  margin-top: 40rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+/* 
+底部固定菜单
+ */
+.footer{
+  width: 750rpx;
+  height: 98rpx;
+  background-color: #E51C23;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+.sum-price,.to-order,.sum-price-val,.sum-price-val-decimal{
+  float: left;
+}
+.sum-price{
+  margin-left: 195rpx;
+}
+.sum-price .price-val{
+  font-size: 50rpx;
+  color: #fff;
+  font-family: PingFang SC Medium;
+}
+.sum-price .price-val-decimal{
+  font-size: 34rpx;
+  color: #fff;
+  font-family: PingFang SC Medium;
+}
+.to-order{
+  margin-left: 33rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #fff;
+}

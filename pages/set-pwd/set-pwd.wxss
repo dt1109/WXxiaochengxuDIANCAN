@@ -1,0 +1,152 @@
+/* pages/set-pwd/set-pwd.wxss */
+page{
+  font-family:PingFang SC;
+  background-color: #f6f6f6;
+}
+.container{
+  width: 750rpx;
+}
+.header{
+  height: 128rpx;
+  background-color: #E51C23;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.header image{
+  float: left;
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 26rpx; 
+}
+.header text{
+  font-size: 36rpx;
+  margin-left: 241rpx;
+  color: #fff;
+}
+
+.content{
+ padding-left: 80rpx;
+ padding-right: 80rpx;
+ overflow: hidden;
+}
+.pwd{
+  display: flex;
+  width:600rpx;
+  height: 100rpx;
+  margin-top: 281rpx;
+  position: relative;
+}
+.pwd-ipt{
+  z-index: 1;
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  display: flex;
+  background: #fff;
+}
+.pwd_ipt .line{
+  position: absolute;
+  top: 0;
+  background-color: #E51C23;
+  width: 1rpx;
+  height: 100rpx;
+}
+.pwd-ipt .line1{
+  left:0rpx;
+  border-radius: 6rpx 0 0 6rpx;
+}
+.pwd-ipt .line2{
+  left:100rpx;
+  border-left: none;
+}
+.pwd-ipt .line3{
+  left:200rpx;
+  border-left: none;
+}
+.pwd-ipt .line4{
+  left:300rpx;
+  border-left: none;
+}
+.pwd-ipt .line5{
+  left: 400rpx;
+  border-left: none;
+}
+.pwd-ipt .line6{
+  left: 500rpx;
+  border-left: none;
+  border-radius: 0 6rpx 6rpx 0;
+}
+.pwd input{
+  width: 600rpx;
+  text-align: left !important;
+  height: 100rpx;
+  outline: none;
+  border: none;
+  text-align: center;
+  line-height: 100rpx;
+  opacity: 0;
+  position: absolute;
+  z-index: 10;
+  left: -1000rpx;
+  /* display: none; */
+}
+.tips{
+  margin-top: 27rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.line{
+  width: 98rpx;
+  height: 100rpx;
+  border: 1rpx solid #e4e4e4;
+  position: absolute;
+  left: 0;
+  text-align: center;
+}
+.pwd-text{
+  display:inline-block;
+  width: 100%;
+  height: 100rpx;
+  /* letter-spacing: 2.16rem;*/
+  /*text-align: justify;*/
+  text-align-last: justify;
+}
+/* 密码设置成功 */
+.mask{
+  position: fixed;
+  width: 750rpx;
+  height: 1300rpx;
+  z-index: 100;
+  background-color: rgba(0,0,0,0.7);
+  top: 0;
+  left: 0;
+}
+.mask-toast{
+  width: 589rpx;
+  height: 360rpx;
+  background-color: #fff;
+  margin-top: 236rpx;
+  margin-left: 71rpx;
+  padding-top: 59rpx;
+  border-radius: 12rpx;
+}
+.mask-toast image{
+  display: block;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 0 auto;
+}
+.pwd-setted-txt{
+  margin-top: 37rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+.pwd-setted-btn{
+  margin-top: 104rpx;
+  text-align: center;
+  font-size: 36rpx;
+}

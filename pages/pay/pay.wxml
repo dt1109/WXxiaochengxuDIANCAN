@@ -1,0 +1,112 @@
+<!--pages/pay/pay.wxml-->
+<view class="container">
+   <view class="header">
+      <view class="header1">
+        <!-- <cover-image src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/diandan/return.png" bindtap="goBack"></cover-image> -->
+        <!-- <text class="name">选择支付方式</text> -->
+     </view>
+   </view>
+   <view wx:if="{{payFlag}}" class="content">
+     <radio-group class="pay-ways" bindchange="chooseCredit">
+       <!-- <view class="pay-way">
+         <image class="payway-pic" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/wx.png"></image>
+         <view class="payway">微信支付</view>
+         <radio class="circle" value="1"></radio>
+       </view> -->
+       <view class="pay-way">
+         <image class="payway-pic" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/change-pay.png"></image>
+         <view class="payway">零钱支付（可用￥{{monyInfo.rebateSurplusAmount}}）</view>
+         <radio class="circle" value="2" color="red" disabled="{{monyInfo.rebateSurplusAmount == 0}}"></radio>
+       </view>
+       <view class="pay-way">
+         <image class="payway-pic" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/credit.png"></image>
+         <view class="payway">银行卡支付</view>
+         <radio class="circle" value="3" color="red" checked="{{true}}"></radio>
+       </view>
+     </radio-group>
+   </view>
+
+   <view class="pay-info">
+     <view class="sum-money">总金额</view>
+     <view class="sum-money-val">
+       <text class="sum-money-val-decimal">￥</text>
+       <text class="sum-money-val-normal">{{orderInfo.payablePrice}}</text>
+     </view>
+     <view class="shopname">{{orderInfo.businessname}}</view>
+   </view>
+
+   <!-- 底部固定菜单 -->
+   <view class="footer" bindtap="payBtn">
+     <view class="sum-mon-val">
+       <text class="sum-mon-val-decimal">￥</text>
+       <text class="sum-mon-val-normal">{{orderInfo.payablePrice}}</text>
+     </view>
+     <view class="topay">支付</view>
+   </view>
+
+   
+
+   <!-- 确认付款 -->
+  <view class="pay-mask" wx:if="{{payAlert}}">
+    <view class="pay-alert">
+        <view class="alert-header">
+          <view bindtap="hidePayAlert" class="headerLeft">
+            <image class="return" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/close.png"></image>
+          </view>
+          <view class="headerTitle">
+            <text class="sure-pay">确认付款</text>
+          </view>
+          <view class="headerRight"></view>
+        </view>
+          
+          <view class="amount">
+          <text class="amount-rmb">￥</text>
+          <text class="amount-val">{{orderInfo.payablePrice}}</text>
+          </view>
+
+          <view class="user-info">
+            <view class="user-name">
+              <text>付款信息：</text>
+              <text style="float:right;color:#333">{{orderInfo.businessname}}</text>
+            </view>
+            <view class="user-payway">
+              <text>付款方式：</text>
+              <view style="float:right" bindtap="chooseCredit2">
+                <text class="pick-credit">{{defaultBlankCard ? defaultBlankCard.bankname: '请选择'}}<!-- 
+                
+               --><block wx:if="{{defaultBlankCard.cardnum}}">({{defaultBlankCard.cardnum}})</block>
+              </text>
+                <image wx:if="{{checkPayTyep == 3}}" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/j.png"></image>
+              </view>
+            </view>
+          </view>
+          <view class="footer" bindtap="pay">
+            <view class="topay textCenter">立即支付</view>
+          </view>
+    </view>
+    <!-- 银行卡支付弹出框  -->
+
+    <view class="pay-alert" wx:if="{{chooseCredit}}">
+      <view class="alert-header">
+      <view class="headerLeft">
+        <image class="return" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/arrow-l.png" bindtap="chooseCreditHide"></image>
+      </view>
+      <view class="headerTitle">
+        <text class="alert-title">选择银行卡</text>
+      
+      </view>
+      <view class="headerRight">
+      <image class="more" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/more.png" bindtap="addCredit"></image>
+      </view>
+        
+      </view>
+      <radio-group bindchange="blankCardSelect">
+            <view class="credit-option" wx:for="{{cardList}}" wx:key="signNo">
+            <image class="credit-pic" src="{{item.banklogo}}"></image>
+            <text class="credit-name">{{item.bankname}}({{item.cardnum}})</text>
+            <radio value="{{item.signNo}}" class="yes" color="red"></radio>
+            </view>
+      </radio-group>
+    </view>
+  </view>
+</view>

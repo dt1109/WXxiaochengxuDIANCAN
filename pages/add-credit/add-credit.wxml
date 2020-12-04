@@ -1,0 +1,20 @@
+<!-- pages/add-credit/add-credit.wxml -->
+<view class="container">
+  <!-- <view class="header">
+    <image src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/return.png" bindtap="goBack"></image>
+    <text>添加银行卡</text>
+  </view> -->
+  <view class="content">
+    <text class="tips">请绑定持卡本人的银行卡</text>
+    <view class="input">
+      <input type="text" placeholder-class="placeholder" placeholder="请输入银行卡卡号" value="" bindinput="inputValue"></input>
+      <text>卡号</text>
+    </view>
+    <view class="read">
+      <image src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/pay/read-xieyi.png"></image>
+      <text>我已阅读并同意</text>
+      <navigator url="../protocol/protocol">《指乎协议》</navigator>
+    </view>
+    <view class="next" bindtap="next">下一步</view>
+  </view>
+</view>

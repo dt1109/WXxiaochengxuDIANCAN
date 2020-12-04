@@ -1,0 +1,12 @@
+<!-- pages/success/success.wxml -->
+<view class="container">
+  <view class="content">
+    <image class="success" src="http://lztimg.oss-cn-qingdao.aliyuncs.com/test/20200613142825/9314286.png"></image>
+    <view class="su-txt">
+      <text>支付成功</text>
+    </view>
+    <view class="pay-amount">
+      <text>实付：￥{{totalPrice}}</text>
+    </view>
+  </view>
+</view>

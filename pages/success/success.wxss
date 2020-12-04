@@ -1,0 +1,48 @@
+/* pages/success/success.wxss */
+page{
+  font-family:PingFang SC;
+  background-color: #fff;
+}
+.container{
+  width: 750rpx;
+}
+.header{
+  height: 128rpx;
+  background-color: #E51C23;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.header cover-image{
+  float: left;
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 26rpx; 
+}
+.header .name{
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 128rpx;
+}
+.success{
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 180rpx;
+  margin-left: 315rpx;
+}
+.su-txt,.pay-amount{
+  width: 750rpx;
+  text-align: center;
+}
+.su-txt{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-top: 70rpx;
+}
+.pay-amount{
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 10rpx;
+}

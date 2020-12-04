@@ -1,0 +1,78 @@
+<!--pages/qrcp/qrcp.wxml-->
+<view class="container">
+  <view class="content" wx:if="{{foodList.length}}">
+    <view class="title">
+      <text>已选菜品</text>
+      <view class="table">桌台:<text class="table-num">1-25</text></view>
+    </view>
+    <view class="line"></view>
+    <view class="selected-list">
+      <view class="selected-item" wx:for="{{foodList}}"  wx:if="{{item.buyNum > 0}}" wx:key="index">
+      <image class="goods-pic" src="{{item.coverUrl}}"></image>
+      <view class="food-info">
+        <view class="food-name">{{item.name}}</view>
+        <view class="food-price">
+          <text class="mini">￥</text>
+          <text>{{item.price}}</text>
+          <text class="mini">/份</text>
+        </view>
+      </view>
+      <image class="add" data-price="{{item.price}}" data-index="{{index}}" bindtap="addFoodNum" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/diandan/add.png"></image>
+      <view class="val">{{item.buyNum}}</view>
+      <image class="reduce" data-price="{{item.price}}" data-index="{{index}}" bindtap="reduceFoodNum" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/diandan/reduce.png"></image>
+      </view>
+    </view>
+    <!-- 备注 -->
+    <view class="words" bindtap="goWords">
+      <!-- <text >备注：请输入口味、偏好、忌口等要求......</text> -->
+      <text>备注：{{remark ? remark : '请输入口味、偏好、忌口等要求......'}}</text>
+      <image class="arrow-r" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/diandan/right-arrow.png"></image>
+    </view>
+    <view class="add-food" bindtap="handleBack">继续加菜</view>
+  </view>
+  
+  <view class="content order-content" wx:if="{{unPayOrder}}">
+    <view class="title">
+      <text>已下单菜品</text>
+      <view class="table">小计:<text class="table-num">{{unPayOrder.payablePrice}}</text></view>
+    </view>
+    <view class="line"></view>
+    <view class="selected-list">
+      <view class="order-content-select" wx:for="{{unPayOrder.offlineGoods}}" wx:key="index">
+        <view class="order-goods-text">
+          <image class="goods-pic" src="{{item.goodsImgUrl}}"></image>
+          <view class="goods-text">{{item.goodsName}}</view>
+        </view>
+        <view class="order-goods-price">
+          <view class="goods-num">x{{item.buyNum}}</view>
+          <view class="goods-price"><text class="mini">￥</text>{{item.totalPrice}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 备注 -->
+    <view wx:if="{{unPayOrder.remark}}" class="words">
+      <text>{{unPayOrder.remark}}</text>
+    </view>
+  </view>
+   <!-- 底部固定菜单 -->
+  <view>
+    <view wx:if="{{unPayOrder}}" class="footer unorder-footer">
+      <view bindtap="handleUnorderPay" class="unorder-no-add">不加菜了</view>
+      <view class="unorder-add" bindtap="handlePay">
+        <view>
+          <text>￥</text>
+          <text>{{money}}</text>
+        </view>
+        <view>加菜下单</view>
+      </view>
+    </view>
+    <view wx:else="{{unPayOrder}}" class="footer" bindtap="handlePay">
+      <view class="sum-price">
+        <text class="price-val-decimal">￥</text>
+        <text class="price-val">{{money}}</text>
+        <!-- <text class="price-val-decimal">22</text> -->
+      </view>
+      <view class="to-order">去下单</view>
+    </view>
+  </view>
+</view>

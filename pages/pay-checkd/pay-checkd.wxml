@@ -1,0 +1,14 @@
+<!-- pages/validate/validate.wxml -->
+<view class="container">
+  <view class="content">
+    <view class="txt">
+      <view class='iptContent'>
+        <block wx:for="{{Length}}" wx:key="item">
+          <input class='iptbox' value="{{authcode.length>=index+1?authcode[index]:''}}" disabled password='{{ispassword}}' catchtap='Tap'></input>
+        </block>
+      </view>
+      <input name="password" password="{{true}}" class='ipt' maxlength="{{Length}}" focus="{{isFocus}}" bindinput="Focus"></input>
+    </view>
+    <view class="next" bindtap="next">支付</view>
+  </view>
+</view>

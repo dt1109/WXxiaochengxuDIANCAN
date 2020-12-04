@@ -1,0 +1,110 @@
+<!-- pages/home/home.wxml -->
+<view class="container">
+  <!-- 店铺信息 -->
+  <view class="header">
+    <view class="header-bk"></view>
+    <view class="header-content">
+      <view class="shop-content">
+        <image class="shop-icon" src="{{detailData.store.logoUrl}}"></image>
+        <view class="shop-message">
+          <view class="shop-name">{{detailData.store.name}}</view>
+          <view class="shop-address">{{detailData.store.streetDetail}}</view>
+          <view class="shop-tables">
+            桌台：
+            <text class="shop-num">{{detailData.foodTable.name}}</text>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{detailData.getDiscount[0]}}" class="shop-discounts">
+        <image class="news-icon" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/diandan/10.png"></image>
+        <view class="txt">{{detailData.getDiscount[0]}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 菜品清单 -->
+  <view class="list">
+    <view class="nav-bar">
+      <view class="navigator {{index === activeIndex ? 'active' : ''}}" data-index="{{index}}" wx:for="{{menu}}" wx:key="_id" bindtap="changeIndex">
+        <text data-index="{{index}}">{{item.name}}</text>
+      </view>
+    </view>
+    <scroll-view class="food-list" scroll-y="{{true}}" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <!-- 菜单列表循环渲染 -->
+      <view class="content" id="a{{index}}" wx:for="{{menu}}" wx:key="_id" data-index="{{index}}">
+        <view class='food-item' wx:for="{{item.goodsList}}" wx:key="_id" wx:for-item="items" wx:for-index="indexs">
+          <image class="food-pic" src="{{items.coverUrl}}" data-description="{{items.description}}" data-name="{{items.name}}" data-coverUrl="{{items.coverUrl}}" bindtap="showDetail"></image>
+          <view class="food-desc">
+            <text class="food-name">{{items.name}}</text>
+            <text class="food-info">{{items.description ? items.description : ''}}</text>
+            <view class="goods-price">
+              <view class="single-price">
+                <text>￥</text>
+                <text class="goods-unit-price">{{items.price}}</text>
+                <text>/份</text>
+              </view>
+              <view class="change-num">
+                <image class="reduce" data-index="{{index}}" data-price="{{items.price}}" data-buyNum="{{indexs}}" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/diandan/reduce.png" bindtap="reduceFoodNum"></image>
+                <view class="val">{{items.buyNum}}</view>
+                <image class="add" data-index="{{index}}" data-price="{{items.price}}" data-buyNum="{{indexs}}" src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/diandan/add.png" bindtap="addFoodNum"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<!-- 商品详情 遮罩层 -->
+<view class="mask" wx:if="{{detailShow}}" bindtap="detailHide">
+  <view class="detail">
+    <view class="detail-title">{{goodsDetailData.name}}</view>
+    <image src="{{goodsDetailData.coverurl}}"></image>
+    <view wx:if="{{goodsDetailData.description}}" class="detail-txt">
+      <text>{{ goodsDetailData.description }}</text>
+    </view>
+  </view>
+</view>
+<!-- 底部固定菜单，结算功能 -->
+<view class="footer">
+  <view class="footer-cart" bindtap="showCartList">
+    <view class="cart">
+      <span class="cart-num">{{foodNum}}</span>
+    </view>
+    <view class="sum-price"><text class="sum-price-icon">￥</text>{{money}}</view>
+  </view>
+  <view wx:if="{{foodNum === 0}}">
+    <button class="ok un-ok">选好了</button>
+  </view>
+  <view wx:else="{{foodNum === 0}}">
+    <button wx:if="{{canAuth}}" bindtap="handleSubmit" class="ok">选好了</button>
+    <button wx:else="{{canAuth}}" open-type="getPhoneNumber" bindgetphonenumber="handleSubmit" class="ok">选好了</button>
+  </view>
+</view>
+<!-- 点击购物车 已选商品列表 -->
+<view class="cart-list-content" bindtap="hideMask" wx:if="{{cartListState}}">
+  <view class="cart-list" catchtap="showMask">
+    <view class="cart-list-header">
+      <text id="selected">已选菜品</text>
+      <text id="price">价格</text>
+      <text id="count">数量</text>
+    </view>
+    <view class="cart-select-list-content">
+      <view class="cart-list-item" wx:for="{{foodList}}" wx:key="index" wx:if="{{item.buyNum > 0}}">
+        <view class="mask-goods">
+          <image src="{{item.coverUrl}}" class="cart-list-pic"></image>
+          <text class="cart-list-foodname">{{item.name}}</text>
+        </view>
+        <view class="cart-list-price">
+          <image src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/diandan/rmb.png"></image>{{item.price}}
+        </view>
+        <view class="change-num">
+          <image class="reduce" data-price="{{item.price}}" data-index="{{index}}"
+            src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/diandan/reduce.png" catchtap="reduceFoodNumCart"></image>
+          <view class="val">{{item.buyNum}}</view>
+          <image class="add" data-price="{{item.price}}" data-index="{{index}}"
+            src="https://lztimg.oss-cn-qingdao.aliyuncs.com/miniprogram/diandan/add.png" catchtap="addFoodNumCart"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
